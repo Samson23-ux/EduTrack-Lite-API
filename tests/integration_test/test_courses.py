@@ -78,3 +78,11 @@ def test_delete_course(test_client, setup_course):
     )
 
     assert response.status_code == 404
+
+def test_get_user_courses(test_client, setup_enrollments):
+    response = test_client.get(
+        '/courses/users/1/'
+    )
+
+    assert response.status_code == 200
+    assert len(response.json()['data']) >= 1

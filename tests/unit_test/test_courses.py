@@ -57,3 +57,7 @@ def test_close_enrollment(setup_course):
 def test_delete_course(setup_course):
     course_service.delete_course(setup_course.id)
     assert setup_course not in courses
+
+def test_get_user_courses(setup_enrollment):
+    courses = course_service.get_user_courses(setup_enrollment.user_id)
+    assert len(courses) >= 1

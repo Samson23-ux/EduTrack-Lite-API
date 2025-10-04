@@ -22,6 +22,16 @@ class CourseService:
             raise CourseNotFoundError('Course not found!')
         return cors
 
+    def get_user_courses(self, user_id: str):
+        user_courses = []
+        for enrollment in enrollments:
+            if enrollment.user_id == user_id:
+                user_courses.append(self.get_course(enrollment.course_id))
+
+        if not user_courses:
+            raise CourseNotFoundError('Course not found!')
+        return user_courses
+
     def get_enrolled_users(self, course_id: str):
         enrolled_users = []
 

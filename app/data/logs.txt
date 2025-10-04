@@ -1,1 +1,1 @@
-Method: GET, URL: http://localhost:8000/openapi.json, Time: 0.9981374740600586
+Method: GET, URL: http://localhost:8000/courses/users/2/, Time: 0.0013191699981689453

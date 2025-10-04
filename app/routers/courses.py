@@ -10,6 +10,12 @@ def get_courses(is_open: bool = Query(None, description='Filter by open course (
 
     return Response(message='Courses retrieved successfully!', data=courses)
 
+@router.get('/users/{user_id}/')
+def get_user_courses(user_id: str):
+    courses = course_service.get_user_courses(user_id)
+
+    return Response(message='Courses retrieved successfully!', data=courses)
+
 @router.get('/{course_id}/users/', response_model=Response)
 def get_enrolled_users(course_id: str):
     enrolled_users = course_service.get_enrolled_users(course_id)
