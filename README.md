@@ -2,7 +2,7 @@
 
 #### This system allows users to register for courses, track course completion, and manage course information. It supports CRUD operations and enforces simple validation and relationships between the entities.
 
-## Functionalities
+## ⚙️ Functionalities
 
 * Register for course
 * Track Course Completion
